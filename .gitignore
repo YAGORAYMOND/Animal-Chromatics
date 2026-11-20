@@ -221,3 +221,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+
+# MANUAL EDIT: ADDING THE FOLDERS I DON'T WANT TO INCLUDE WHEN PUSHING THE PROJECT 
+# FOLDER TO GITHUB FROM THE CONSOLE
+/query_animaldiversity/
+/animal_photos/
+/animal_photos_no_bkg/
+/verif/
+/verif_accepted/
+/verif_old/
+/verif_pending/
+/security copy/
