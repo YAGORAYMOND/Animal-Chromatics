@@ -24,5 +24,20 @@ Example of a verification image (left: segmented animal, right: calculated palle
 <img width="563" height="235" alt="image" src="https://github.com/user-attachments/assets/003c630d-33cb-4f8f-9583-55f8120ae80d" />
 
 ## STEP 4: Manual validation and filtering of the extracted palettes
-While reviewing the verification images it became obvious that the results needed a visual validation. Therefore, the script `STEP4_image_filtering.py` was created to coordinate this process. 
+While reviewing the verification images it became obvious that the results needed a visual validation. Therefore, the script `STEP4_image_filtering.py` was created to coordinate this process. When this script is first run, a folder called "verif_pending" is created with first images of each specie. You then need to manually inspect the images and delete from this folder the files that do not meet requirements (based on your human eye). Once all the images have been reviewed, execute the script again an the images will be transfered to "verif_accepted" folder. Additionally the "Verif_pending" folder will be filled again with more images of the same species as the rejected images, if any available. Repeat this process of verificaton and execution untill no more new images appear in "verif_pending". A csv called "registro_eliminadas_manualmente.csv" is created to track the process. Additionally, a new column is created in "animal_features_wt_colors.csv" named "seleccionados" with a True if the image has been selected and a False otherwhise.
+
+Here you can find some examples of images whose palette is not passing the visual inspections. The main causes are:
+
+A) Wrong segmentation:
+<img width="460" height="194" alt="image" src="https://github.com/user-attachments/assets/ebeb75df-8f97-4972-8c35-6b41ae7302ad" />
+
+B) Animal framed too small in the image:
+<img width="460" height="194" alt="image" src="https://github.com/user-attachments/assets/1c085f55-9f73-44dd-8de4-82eb0691e81b" />
+
+C) Original image in greyscale:
+<img width="460" height="194" alt="image" src="https://github.com/user-attachments/assets/63b101d5-5057-4605-8a5b-6004399397e7" />
+
+D) White balance missadjustment:
+<img width="460" height="194" alt="image" src="https://github.com/user-attachments/assets/47f2767e-8cb6-48f4-81af-21f9ab1ad0fb" />
+
 
