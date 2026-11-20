@@ -2,7 +2,7 @@
 A data visualisation project exploring the colour palettes of animal species and their relationship with the characteristics documented in Animal Diversity Web (ADW)
 
 ## Dataset
-The data was obtainde from Animal Diversity Web including the characteristics considered relevant for this study toguether with images of the animals for the extraction of its characteristic color palettes.
+The data was obtainde from Animal Diversity Web (https://animaldiversity.org/) including the characteristics considered relevant for this study toguether with images of the animals for the extraction of its characteristic color palettes.
 
 ## Data processing:
 
