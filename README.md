@@ -12,7 +12,7 @@ The script `STEP1_database_creator_from_htmls.py` takes the html file of the res
 ### STEP2: Cleaning and restructuring of the dataset
 The dataset resulting from step 1 contains 88 extracted columns with unfolded categories with values Yes or empy. In the scrpit `STEP2_database_processing.py`, these colums are colapsed into 32 colums with mainly categorical variables. Additionally a column with stablishing a score for  processing priority is calculated (in case processing priorisaiton is needed). The result is saved in anew CSV: “animal_features_filtered.csv”  
 
-## STEP3: Background removal and extraction of colour palettes
+### STEP3: Background removal and extraction of colour palettes
 This script `STEP3_image_processing.py` opens the images listed on “animal_features_filtered.csv” (column image_path contains its path) and applies the rembg algorithm (https://github.com/danielgatis/rembg) to remove the images background. The resulting images are stored in a folder named “animal_photos_no_bkg”.
 
 Example of a background removal:
@@ -23,7 +23,7 @@ Subsequently, the images with removed background are processed with clustering a
 Example of a verification image (left: segmented animal, right: calculated pallete)
 <img width="563" height="235" alt="image" src="https://github.com/user-attachments/assets/003c630d-33cb-4f8f-9583-55f8120ae80d" />
 
-## STEP 4: Manual validation and filtering of the extracted palettes
+### STEP 4: Manual validation and filtering of the extracted palettes
 While reviewing the verification images it became obvious that the results needed a visual validation. Therefore, the script `STEP4_image_filtering.py` was created to coordinate this process. When this script is first run, a folder called "verif_pending" is created with first images of each specie. You then need to manually inspect the images and delete from this folder the files that do not meet requirements (based on your human eye). Once all the images have been reviewed, execute the script again an the images will be transfered to "verif_accepted" folder. Additionally the "Verif_pending" folder will be filled again with more images of the same species as the rejected images, if any available. Repeat this process of verificaton and execution untill no more new images appear in "verif_pending". A csv called "registro_eliminadas_manualmente.csv" is created to track the process. Additionally, a new column is created in "animal_features_wt_colors.csv" named "seleccionados" with a True if the image has been selected and a False otherwhise.
 
 Here you can find some examples of images whose palette is not passing the visual inspections. The main causes are:
